@@ -1,0 +1,9 @@
+# Only addons/ goes into the Asset Library download.
+* text=auto eol=lf
+*.png binary
+/icon.png export-ignore
+/screenshots export-ignore
+/README.md export-ignore
+/LICENSE export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore

@@ -1,0 +1,229 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/gridwright_library/dock.gd" id="1_dock"]
+
+[node name="Gridwright" type="VBoxContainer"]
+offset_right = 320.0
+offset_bottom = 640.0
+script = ExtResource("1_dock")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Gridwright Library"
+
+[node name="Refresh" type="Button" parent="Header"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Reload the pack list"
+flat = true
+
+[node name="PromoBox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Promo" type="RichTextLabel" parent="PromoBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 3
+
+[node name="KeyRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="KeyEdit" type="LineEdit" parent="KeyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Your Gridwright key (gwp_...). It is kept in the editor's own settings, never in the project."
+placeholder_text = "Paste your key (gwp_...)"
+secret = true
+
+[node name="CheckKey" type="Button" parent="KeyRow"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Save the key and show what you've bought"
+text = "Check"
+
+[node name="AccountRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Account" type="Label" parent="AccountRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="GetKey" type="LinkButton" parent="AccountRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+text = "Get your key"
+
+[node name="FilterRow" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Search" type="LineEdit" parent="FilterRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search packs"
+clear_button_enabled = true
+
+[node name="Category" type="OptionButton" parent="FilterRow"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Show one kind of pack"
+fit_to_longest_item = false
+
+[node name="Notice" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NoticeBox" type="VBoxContainer" parent="Notice"]
+layout_mode = 2
+
+[node name="NoticeTop" type="HBoxContainer" parent="Notice/NoticeBox"]
+layout_mode = 2
+
+[node name="NoticeText" type="Label" parent="Notice/NoticeBox/NoticeTop"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="NoticeClose" type="Button" parent="Notice/NoticeBox/NoticeTop"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+tooltip_text = "Hide this message"
+text = "x"
+flat = true
+
+[node name="NoticeButtons" type="HFlowContainer" parent="Notice/NoticeBox"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressRow" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ProgressTop" type="HBoxContainer" parent="ProgressRow"]
+layout_mode = 2
+
+[node name="ProgressLabel" type="Label" parent="ProgressRow/ProgressTop"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="Cancel" type="Button" parent="ProgressRow/ProgressTop"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "Cancel"
+
+[node name="Progress" type="ProgressBar" parent="ProgressRow"]
+unique_name_in_owner = true
+layout_mode = 2
+show_percentage = false
+
+[node name="Count" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.6)
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Footer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Line" type="HSeparator" parent="Footer"]
+layout_mode = 2
+
+[node name="PixelRow" type="HBoxContainer" parent="Footer"]
+layout_mode = 2
+
+[node name="PixelButton" type="Button" parent="Footer/PixelRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Nearest filtering and pixel snapping for crisp pixel art. Shows each change first, and can be undone."
+text = "Make project pixel-perfect"
+
+[node name="UndoPixel" type="Button" parent="Footer/PixelRow"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Put back the project settings from before"
+text = "Undo"
+
+[node name="Links" type="HFlowContainer" parent="Footer"]
+layout_mode = 2
+
+[node name="Browse" type="LinkButton" parent="Footer/Links"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Browse in the browser"
+
+[node name="Discord" type="LinkButton" parent="Footer/Links"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Discord"
+
+[node name="PixelDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+title = "Make project pixel-perfect"
+ok_button_text = "Apply"
+
+[node name="PixelBox" type="VBoxContainer" parent="PixelDialog"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 452.0
+offset_bottom = 200.0
+
+[node name="PixelText" type="Label" parent="PixelDialog/PixelBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="StretchCheck" type="CheckBox" parent="PixelDialog/PixelBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Also scale the whole game by whole pixels (stretch mode)"
+
+[node name="StretchText" type="Label" parent="PixelDialog/PixelBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="ConfirmDialog" type="ConfirmationDialog" parent="."]
+unique_name_in_owner = true
+ok_button_text = "Install again"
+dialog_autowrap = true
